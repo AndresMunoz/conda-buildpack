@@ -15,7 +15,7 @@ echo "-----> Installing ArcGIS Packages..."
 conda install -y -c esri arcgis
 
 echo "-----> Uninstalling MKL Package..."
-conda uninstall -y mkl
+conda uninstall -y --force mkl
 
 #!
 #if [ -f conda-requirements.txt ]; then
