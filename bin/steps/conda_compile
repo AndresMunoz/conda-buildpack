@@ -11,19 +11,27 @@ echo "nomkl" > $HOME/.heroku/miniconda/conda-meta/pinned
 echo "added pinned file in $HOME/.heroku/miniconda/conda-meta/pinned"
 #!conda install nomkl
 
-echo "-----> Listing Clean up..."
-conda clean -a --dry-run -y
-
-echo "-----> Cleaning up..."
-conda clean -a -y
+conda update -n base conda -y
 
 echo "-----> Installing ArcGIS Packages..."
 conda install -y -c esri arcgis
 
 
-
 #echo "-----> Uninstalling MKL Package..."
 #conda remove -y --force mkl
+
+echo "-----> Uninstalling Pandas and Scipy Package..."
+conda remove -y --force pandas
+conda remove -y --force scipy
+
+echo "-----> Listing installed packages..."
+conda list
+
+echo "-----> Listing Clean up..."
+conda clean -a --dry-run -y
+
+echo "-----> Cleaning up..."
+conda clean -a -y
 
 #!
 #if [ -f conda-requirements.txt ]; then
