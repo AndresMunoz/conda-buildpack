@@ -14,8 +14,14 @@ echo "added pinned file in $HOME/.heroku/miniconda/conda-meta/pinned"
 echo "-----> Installing ArcGIS Packages..."
 conda install -y -c esri arcgis
 
-echo "-----> Uninstalling MKL Package..."
-conda remove -y --force mkl
+echo "-----> Listing Clean up..."
+conda clean -a --dry-run -y
+
+echo "-----> Cleaning up..."
+conda clean -a -y
+
+#echo "-----> Uninstalling MKL Package..."
+#conda remove -y --force mkl
 
 #!
 #if [ -f conda-requirements.txt ]; then
