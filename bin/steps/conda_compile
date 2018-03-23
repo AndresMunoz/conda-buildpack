@@ -18,10 +18,10 @@ conda install -y -c esri arcgis
 
 
 #echo "-----> Uninstalling MKL Package..."
-#conda remove -y --force mkl
+conda remove -y --force mkl
 
-echo "-----> Uninstalling Pandas Package..."
-conda remove -y --force pandas
+echo "-----> Installing Pandas Package..."
+conda install -y pandas
 
 echo "-----> Listing installed packages..."
 conda list
